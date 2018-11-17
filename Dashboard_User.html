@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  
+<style>
+  #chart-area svg {
+    margin:auto;
+    display:inherit;
+  }
+  text {
+    font: 10px sans-serif;
+  }
+  form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+.nav li {display:inline;
+	margin: 0; /* To remove default bottom margin */ 
+    padding: 0; /* To remove default left padding */
+	}
+
+</style>
+  
+</head>
+<body>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+function redirect()
+    {
+	alert('onClick');
+    window.location('http://127.0.0.1:8080/UserAccount.html');
+    }
+
+	</script>
+	
+<header class="header7" id="header7">
+	
+	<nav role="navigation" class="navbar navbar-default">
+                    <div class="container">
+                    <div class="navbar-header">
+                        <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button" data-selector="Footers">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       <a href="#" class="navbar-brand brand" data-selector="Footers" style="color: rgb(150, 120, 180); font-weight: 400; text-transform: uppercase;"><i class="fa fa-codepen">AIA Hack</i></a>
+                    </div>
+
+                    <div id="navbar-collapse-02" class="collapse navbar-collapse">		      
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            <li><a href="#" data-selector="nav a, a.edit" style="">About</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Team</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Blog</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Contact</a></li>
+                            
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                    </div>
+                </nav>				
+            <section id="content-section1" class="content-section1">
+                <div class="container">
+                    <div class="row">
+					
+					<div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Account</h3>
+                                <div>
+                                <div class="box">
+                                    <div><img src="images.png" alt="Team Member 1" 	onclick="window.open('UserAccount.html', '_self');"></div>							
+                                    <h3>Jackson</h3>
+                                    <div><strong></strong></div>
+                                    <p class="description ">Be Smart</p>
+                                    <div>
+                                        <a href="#"><i class="fa fa-google-plus fa-1x social-icon"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-1x social-icon"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin fa-1x social-icon"></i></a> 
+                                    </div>									
+                                </div><!-- //box -->
+                            </div>
+                            </div>    
+                        </div>
+						
+                        <div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Today Activity</h3>
+                                <div id="dailyActivity" onclick="window.open('DailyPieChartComparision.html', '_self');">
+                                     
+                                </div>
+                            </div>    
+                        </div>
+                       
+                        <div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-glass"></i>
+                                <h3>Weekly Activity</h3>
+                                <div id="weeklyActivity" onclick="window.open('WeeklyPieChartComparision.html', '_self');">
+                                    
+                                </div>
+                            </div>    
+                        </div>
+                        
+                    </div><!-- end row -->
+                    
+                </div><!-- end container -->
+            </section><div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Upcoming Task & Activities</h3>
+								<div class="text-left single-content">
+                                <ul>
+                                    <li>AIA 5 KM Marathon on Nov 24th</li>
+									<li>Free Health Checkup Camp on Nov 29th at JCH</li>
+                                </ul>
+								</div>
+                            </div>    
+                        </div>
+        <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.1.3"></script>
+
+<script>
+
+var request = new XMLHttpRequest();
+   request.open("GET", "data.json", false);
+   request.send(null)
+   var my_JSON_object = JSON.parse(request.responseText);
+
+   console.log (my_JSON_object['apples']);
+
+var width = 240,
+    height = 240,
+    radius = Math.min(width, height) / 2;
+
+activity('#dailyActivity','apples');
+	activity('#weeklyActivity','oranges');
+	
+	 function activity(activityType,period) { 
+	 
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 70);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function (d) {
+    return d.count;
+});
+
+
+
+var svg = d3.select(activityType).append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    var g = svg.selectAll(".arc")
+        .data(pie(my_JSON_object[period]))
+        .enter().append("g")
+        .attr("class", "arc");
+
+    g.append("path")
+        .attr("d", arc)
+        .style("fill", function (d) {
+        return color(d.data.count);
+    });
+
+    g.append("text")
+        .attr("transform", function (d) {
+        return "translate(" + arc.centroid(d) + ")";
+    })
+        .attr("dy", ".35em")
+        .style("text-anchor", "middle")
+        .text(function (d) {
+        return d.data.region;
+    });
+	}
+</script>
+ </header><!-- header -->
+ 
+	</body>
+
+</html>
