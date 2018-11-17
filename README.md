@@ -1,6 +1,7 @@
 # whoami
+
+Team 2 - AIA - LifeHackathon18
+
 Know your self
 
-AIA - LifeHackathon18
-
-This app has various features to lead you life healthy and happy.
+This app has various features to lead healthy and happy life.
