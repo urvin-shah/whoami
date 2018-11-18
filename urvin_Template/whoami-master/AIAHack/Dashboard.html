@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  
+<style>
+  #chart-area svg {
+    margin:auto;
+    display:inherit;
+  }
+  text {
+    font: 10px sans-serif;
+  }
+  form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+.nav li {display:inline;
+	margin: 0; /* To remove default bottom margin */ 
+    padding: 0; /* To remove default left padding */
+	}
+
+</style>
+  
+</head>
+<body>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+
+function redirect()
+    {
+	alert('onClick');
+    window.location('http://127.0.0.1:8080/UserAccount.html');
+    }
+
+	</script>
+	
+<header class="header7" id="header7">
+	
+	<nav role="navigation" class="navbar navbar-default">
+                    <div class="container">
+                    <div class="navbar-header">
+                        <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button" data-selector="Footers">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       <a href="#" class="navbar-brand brand" data-selector="Footers" style="color: rgb(150, 120, 180); font-weight: 400; text-transform: uppercase;"><i class="fa fa-codepen" onclick="window.open('Dashboard.html', '_self');">AIA Hack</i></a>
+                    </div>
+
+                    <div id="navbar-collapse-02" class="collapse navbar-collapse">		      
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                            <li><a href="#" data-selector="nav a, a.edit" style="">About</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Team</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Challanges</a></li>
+                            <li><a href="#" data-selector="nav a, a.edit" style="">Contact</a></li>
+                            
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                    </div>
+                </nav>				
+            <section id="content-section1" class="content-section1">
+                <div class="container">
+                    <div class="row">
+					
+					<div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Account</h3>
+                                <div>
+                                <div class="box">
+                                    <div><img src="images.png" alt="Team Member 1" 	onclick="window.open('UserAccount.html', '_self');"></div>							
+                                    <h3>Jackson</h3>
+                                    <div><strong></strong></div>
+                                    <p class="description ">Be Smart</p>
+                                    <div>
+                                        <a href="#"><i class="fa fa-google-plus fa-1x social-icon"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-1x social-icon"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin fa-1x social-icon"></i></a> 
+                                    </div>									
+                                </div><!-- //box -->
+                            </div>
+                            </div>    
+                        </div>
+						
+                        <div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Today Activity</h3>
+                                <div id="dailyActivity" onclick="window.open('DailyPieChartComparision.html', '_self');">
+                                     
+                                </div>
+                            </div>    
+                        </div>
+                       
+                        <div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-glass"></i>
+                                <h3>Weekly Activity</h3>
+                                <div id="weeklyActivity">
+                                    
+                                </div>
+                            </div>    
+                        </div>
+                        
+                    </div><!-- end row -->
+                    
+                </div><!-- end container -->
+            </section><div class="col-md-4">
+                            <div class="text-center single-content">
+                                <i class="fa fa-code"></i>
+                                <h3>Upcoming Task & Activities</h3>
+								<div class="text-left single-content">
+                                <ul>
+                                    <li>AIA 5 KM Marathon on Nov 24th</li>
+									<li>Free Health Checkup Camp on Nov 29th at JCH</li>
+                                </ul>
+								</div>
+                            </div>    
+                        </div>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script>
+
+var request = new XMLHttpRequest();
+   request.open("GET", "data.json", false);
+   request.send(null)
+   var my_JSON_object = JSON.parse(request.responseText);
+   alert (my_JSON_object['apples']);
+   console.log (my_JSON_object['apples']);
+   
+     const width = 240;
+    const height = 240;
+    const radius = Math.min(width, height) / 2;
+	
+	activity('#dailyActivity','apples');
+	activity('#weeklyActivity','oranges');
+	
+	 function activity(activityType,period) { 
+    const svg = d3.select(activityType)
+        .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+        .append("g")
+            .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+    const color = d3.scaleOrdinal(["#66c2a5","#fc8d62","#8da0cb",
+         "#e78ac3","#a6d854","#ffd92f"]);
+
+		 var tooltip = d3.select(activityType) 
+		.append('div') // append a div element to the element we've selected                                    
+		.attr('class', 'tooltip'); // add class 'tooltip' on the divs we just selected
+		tooltip.append('div') // add divs to the tooltip defined above                            
+        .attr('class', 'label'); // add class 'label' on the selection  
+		 
+    const pie = d3.pie()
+        .value(d => d.count)
+        .sort(null);
+
+    const arc = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius);
+
+    function type(d) {
+        d.apples = Number(d.apples);
+        d.oranges = Number(d.oranges);
+        return d;
+    }
+
+    function arcTween(a) {
+        const i = d3.interpolate(this._current, a);
+        this._current = i(1);
+        return (t) => arc(i(t));
+    }
+  
+    d3.json("data.json", type).then(data => {  
+        
+            // Join new data
+            const path = svg.selectAll("path")
+                .data(pie(my_JSON_object[period]))
+				.attr("text-anchor", "middle")                          //center the text on it's origin
+            .text(function(d, i) { return data[period]; })
+
+	
+
+            // Update existing arcs
+            path.transition().duration(200).attrTween("d", arcTween);
+			
+	tooltip.select('.label').html(data[period].count); 
+	
+	path.on('mouseover', function(d) { 
+	tooltip.select('.label').html(data[period].count);
+	tooltip.style('display', 'block'); // set display                     
+	});
+	
+	
+	
+	path.append("svg:text")                                     //add a label to each slice
+                .attr("transform", function(d) {                    //set the label's origin to the center of the arc
+                //we have to make sure to set these before calling arc.centroid
+                d.innerRadius = 0;
+                d.outerRadius = 100;
+                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
+            })
+            .attr("text-anchor", "middle")                          //center the text on it's origin
+            .text(function(d, i) { return data[period]; }); 
+
+            // Enter new arcs
+            path.enter().append("path")
+                .attr("fill", (d, i) => color(i))
+                .attr("d", arc)
+                .attr("stroke", "white")
+                .attr("stroke-width", "6px")
+                .each(function(d) { this._current = d; });
+        
+
+    });
+}
+</script>
+ </header><!-- header -->
+ 
+	</body>
+
+</html>
