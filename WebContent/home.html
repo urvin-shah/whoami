@@ -27,13 +27,16 @@
 <!--  CSS for Demo Purpose, don't include it in your project     -->
 <link href="assets/css/demo.css" rel="stylesheet" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--     Fonts and icons     -->
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
@@ -128,29 +131,20 @@ form {
 							<p>Connect App</p>
 					</a></li>
 					<li><a href="avtar.html"> <i class="pe-7s-note2"></i>
-							<p>My Avtar</p>
+							<p>My Avatar</p>
 					</a></li>
 					<li><a href="target.html"> <i class="pe-7s-note2"></i>
 							<p>My Target</p>
 					</a></li>
-					<li>
-							<a href="FamilyOverview.html">
-								<i class="pe-7s-note2"></i>
-								<p>Family Overview</p>
-							</a>
-						</li> 
-					<li>
-						<a href="Family.html">
-							<i class="pe-7s-note2"></i>
+					<li><a href="FamilyOverview.html"> <i class="pe-7s-note2"></i>
+							<p>Family Overview</p>
+					</a></li>
+					<li><a href="Family.html"> <i class="pe-7s-note2"></i>
 							<p>Family Engagement</p>
-						</a>
-					</li>   
-					<li>
-							<a href="MyRewards.html">
-								<i class="pe-7s-note2"></i>
-								<p>Rewards</p>
-							</a>
-						</li>
+					</a></li>
+					<li><a href="MyRewards.html"> <i class="pe-7s-note2"></i>
+							<p>Rewards</p>
+					</a></li>
 
 				</ul>
 			</div>
@@ -176,8 +170,8 @@ form {
 							</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"> <i class="fa fa-globe"></i> <b
-									class="caret hidden-lg hidden-md"></b>
-									<span class="notification hidden-sm hidden-xs">5</span>
+									class="caret hidden-lg hidden-md"></b> <span
+									class="notification hidden-sm hidden-xs">5</span>
 									<p class="hidden-lg hidden-md">
 										5 Notifications <b class="caret"></b>
 									</p>
@@ -195,9 +189,6 @@ form {
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="">
-									<p>Account</p>
-							</a></li>							
 							<li><a href="#">
 									<p>Log out</p>
 							</a></li>
@@ -212,14 +203,14 @@ form {
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-4">
-							<div class="card" >
+							<div class="card">
 								<div class="header">
-									<h4 class="title">Avtar</h4>
+									<h4 class="title">Avatar</h4>
 								</div>
 								<div class="box" style="text-align: center;">
 									<div>
 										<img src="Images/images.png" alt="Team Member 1"
-											onclick="window.open('UserAccount.html', '_self');">
+											onclick="window.open('avtar.html', '_self');">
 									</div>
 									<h3>Jackson</h3>
 									<div>
@@ -236,17 +227,15 @@ form {
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="card">
+							<div class="card" style="background-color:lightgreen;">
 								<div class="header">
 									<h4 class="title">Day</h4>
 									<p class="category">Today activity</p>
 								</div>
-								<div id="dayChart" class="content">
+								<div id="dayChart" class="content" >
 									<!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div> -->
 									<div id="dailyActivity"
-										onclick="window.open('daydelta.html', '_self');">
-
-									</div>
+										onclick="window.open('daydelta.html', '_self');" ></div>
 									<!-- <div class="footer">
 										<div class="legend">
 											<i class="fa fa-circle text-info"></i> Open <i
@@ -263,7 +252,7 @@ form {
 						</div>
 
 						<div class="col-md-4">
-							<div class="card">
+							<div class="card" style="background-color:orange;">
 								<div class="header">
 									<h4 class="title">Week</h4>
 									<p class="category">This Week activities</p>
@@ -271,9 +260,7 @@ form {
 								<div class="content">
 									<!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div> -->
 									<div id="weeklyActivity"
-										onclick="window.open('daydelta.html', '_self');">
-
-									</div>
+										onclick="window.open('daydelta.html', '_self');"></div>
 									<!-- <div class="footer">
 										<div class="legend">
 											<i class="fa fa-circle text-info"></i> Open <i
@@ -289,7 +276,7 @@ form {
 							</div>
 						</div>
 
-						
+
 					</div>
 
 				</div>
@@ -297,18 +284,20 @@ form {
 
 
 			<!-- Small modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal"
+				data-target=".bd-example-modal-sm">Small modal</button>
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-			<div class="form-group">
-					<label>Work</label>
-					<input type="text" class="form-control" placeholder="No Of Hours" value="8">
+			<div class="modal fade bd-example-modal-sm" tabindex="-1"
+				role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="form-group">
+							<label>Work</label> <input type="text" class="form-control"
+								placeholder="No Of Hours" value="8">
+						</div>
+					</div>
 				</div>
-    </div>
-  </div>
-</div>
+			</div>
 
 
 
@@ -325,7 +314,8 @@ form {
 					<p class="copyright pull-right">
 						&copy;
 						<script>document.write(new Date().getFullYear())</script>
-						<a href="">AIA</a>, made with love for healthier, better and longer life
+						<a href="">AIA</a>, made with love for healthier, better and
+						longer life
 					</p>
 				</div>
 			</footer>
