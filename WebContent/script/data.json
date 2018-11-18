@@ -1,18 +1,18 @@
 {
 	"daily": [
-		{ "region": "sleep", "count": "7"},
-        { "region": "work", "count": "8"},
+		{ "region": "Sleep", "count": "7"},
+        { "region": "Work", "count": "8"},
+        { "region": "Shopping", "count": "1"},		
         { "region": "Gym", "count": "2"},
         { "region": "Recreation", "count": "2"},
-        { "region": "Outdoors", "count": "1"},
-        { "region": "Shopping", "count": "1"}		
+        { "region": "Outdoors", "count": "1"}
 	],
 	"weekly": [
-		{ "region": "sleep", "count": "10"},
-        { "region": "work", "count": "12"},
-        { "region": "Gym", "count": "0"},
-        { "region": "Recreation", "count": "0"},
-        { "region": "Outdoors", "count": "1"},
-        { "region": "Shopping", "count": "1"}
+		{ "region": "Sleep", "count": "68"},
+        { "region": "Work", "count": "50"},
+        { "region": "Shopping", "count": "6"},
+        { "region": "Gym", "count": "6"},
+        { "region": "Recreation", "count": "13"},
+        { "region": "Outdoors", "count": "25"}
 	]
 }

@@ -8,11 +8,13 @@
 8. Add AIA logo
 9. Change female image
 10. Instead of Update profile keep 2 buttons Save and Cancel
-11. Remove footer
-12. copy right AIA, made with love for healthier, better and longer life.
-13. Connect App : Remove WeChat, Save,Cancel
-14. Change icon of My Avtar same as Profile
-15. Change icon of Family
+
+
+11. Remove footer   --- Done
+12. copy right AIA, made with love for healthier, better and longer life.   --Done
+13. Connect App : Remove WeChat, Save,Cancel     -- Done
+14. Change icon of My Avtar same as Profile  -- Done
+15. Change icon of Family    -- Done
 16. Fruit Intact save cancel
 17. Change to Home page to lady
 18. Badge

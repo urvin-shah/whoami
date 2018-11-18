@@ -39,63 +39,39 @@
 
 
     	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Urvin Shah
-                </a>
-            </div>
+				<div class="logo">
+					<img src="Images/aia_logo.png" alt="Team Member 1"
+						onclick="window.open('home.html', '_self');">
+				</div>
 
-            <ul class="nav">
-                <li>
-                    <a href="home.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Home</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="user.html">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="connectapp.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Connect App</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="avtar.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>My Avatar</p>
-                    </a>
-                </li>
-                <li >
-                    <a href="target.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>My Target</p>
-                    </a>
-                </li>    
-                <li>
-						<a href="FamilyOverview.html">
-							<i class="pe-7s-note2"></i>
+				<ul class="nav">
+					<li><a href="home.html"> <i class="pe-7s-graph"></i>
+							<p>Home</p>
+					</a></li>
+					<li><a href="user.html"> <i class="pe-7s-user"></i>
+							<p>User Profile</p>
+					</a></li>
+					<li><a href="target.html"> <i class="pe-7s-note2"></i>
+							<p>My Target</p>
+					</a></li>
+					<li><a href="connectapp.html"> <i class="pe-7s-note2"></i>
+							<p>Connect App</p>
+					</a></li>
+					<li><a href="avtar.html"> <i class="pe-7s-user"></i>
+							<p>My Avatar</p>
+					</a></li>					
+					<li ><a href="FamilyOverview.html"> <i
+							class="pe-7s-user"></i>
 							<p>Family Overview</p>
-						</a>
-					</li> 
-                <li  class="active">
-						<a href="Family.html" >
-							<i class="pe-7s-note2"></i>
+					</a></li>
+					<li class="active"><a href="Family.html"> <i class="pe-7s-note2"></i>
 							<p>Family Engagement</p>
-						</a>
-                    </li> 
-                    <li>
-							<a href="MyRewards.html">
-								<i class="pe-7s-note2"></i>
-								<p>Rewards</p>
-							</a>
-						</li>              
-            </ul>
-    	</div>
+					</a></li>
+					<li><a href="MyRewards.html"> <i class="pe-7s-note2"></i>
+							<p>Rewards</p>
+					</a></li>
+				</ul>
+			</div>
     </div>
 
     <div class="main-panel">
@@ -121,7 +97,6 @@
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-globe"></i>
                                     <b class="caret hidden-sm hidden-xs"></b>
-                                    <span class="notification hidden-sm hidden-xs">5</span>
 									<p class="hidden-lg hidden-md">
 										5 Notifications
 										<b class="caret"></b>
@@ -166,12 +141,9 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">My Challenges</h4>
+                                <h4 class="title">My Family Challengers</h4>
                             </div>
                             <div class="content">
-                                
-                                
-                                
                                 
                                 <div class="card-body ">
                                     <div class="table-full-width">
@@ -183,9 +155,10 @@
                                                             <label class="form-check-label">
                                                                 
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Challenged:Donald</label>
+                                                                <label>Challenged : Donald</label>
+                                                                </br>
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Won : Donald</label>
+                                                                <label><b>Won :</b> Donald</label>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -203,9 +176,10 @@
                                                             <label class="form-check-label">
                                                                 
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Challenged:Jack & Lucie</label>
+                                                                <label>Challenged : Jackson & Jocky</label>
+                                                                </br>
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Won : Lucie</label>
+                                                                <label><b>Won :</b> Jocky</label>
                                                             </label>
                                                         </div>
                                                     </td>
@@ -222,13 +196,14 @@
                                                         <div class="form-check">
                                                             <label class="form-check-label">
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Challenged:Marry & Donald </label>
+                                                                <label>Challenged : Jackson & Donald </label>
+                                                                </br>
                                                                 <span class="form-check-sign"></span>
-                                                                <label>Won  :  Jack</label>
+                                                                <label><b>Won  :</b>  Jackson</label>
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>Exercise 1 hour a day 7 days a week
+                                                    <td>Exercise 1 hour a day for a week
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-link">
@@ -263,11 +238,10 @@
                                             <div class="form-group">
                                                 <label>Type</label>
                                                 <Select class="dropdown">
-                                                    <option class="dropdown-item" href="#">Type</a>
                                                     <option class="dropdown-item" href="#">Walk</a>
                                                     <option class="dropdown-item" href="#">Physical workout</a>
                                                     <option class="dropdown-item" href="#">Swimming</a>
-                                                    <option class="dropdown-item" href="#">Hicking</a>
+                                                    <option class="dropdown-item" href="#">Hiking</a>
                                                     <option class="dropdown-item" href="#">Healthy Diet</a>
                                                     <option class="dropdown-item" href="#">Yoga</a>
                                                     <option class="dropdown-item" href="#">Others</a>
@@ -285,12 +259,11 @@
                                      <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label>Challlenging</label>
+                                                <label>Challenging</label>
                                                 <select class="mdb-select md-form colorful-select dropdown-primary" multiple searchable="Search here.." style="width: 91">
                                                     <option value="" disabled selected>Challenge Mem</option>
-                                                    <option value="1">Jack</option>
-                                                    <option value="2">Marry</option>
-                                                    <option value="3">Lucie</option>
+                                                    <option value="1">Jackson</option>
+                                                    <option value="2">Jocky</option>                                                    
                                                     <option value="4">Donald</option>
                                                   </select>
                                             </div>
@@ -309,8 +282,8 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Task Discription</label>
-                                                <input type="text" class="form-control" placeholder="Spcify Task Discription" value="">
+                                                <label>Task Description</label>
+                                                <input type="text" class="form-control" placeholder="Specify Task description" value="">
                                             </div>
                                         </div>
                                         
@@ -322,15 +295,13 @@
                                         </div>
                                         
                                     </div>                            
-                                    <button type="submit" class="btn btn-info btn-fill pull-left">Add Challange</button>
+                                    <button type="submit" class="btn btn-info btn-fill pull-left">Add Challenge</button>
                                     <div class="clearfix"></div>
                                 </form>
 
                             </div>
                         </div>
                     </div>
-
-                    <!-- Family Add New Challanges-->
 
 
                 </div>

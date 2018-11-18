@@ -44,7 +44,11 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300'
 	rel='stylesheet' type='text/css'>
 <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
+<style type="text/css">
+.modal-backdrop {
+  z-index: -1;
+}
+</style>
 <!-- <style>
   
   body {
@@ -116,7 +120,9 @@ form {
 
 			<div class="sidebar-wrapper">
 				<div class="logo">
-					<a href="" class="simple-text"> Urvin Shah </a>
+					<!-- <a href="" class="simple-text"> Urvin Shah </a> -->
+					<img src="Images/aia_logo.png" alt="Team Member 1"
+						onclick="window.open('home.html', '_self');">
 				</div>
 
 				<ul class="nav">
@@ -127,16 +133,16 @@ form {
 					<li><a href="user.html"> <i class="pe-7s-user"></i>
 							<p>User Profile</p>
 					</a></li>
-					<li><a href="connectapp.html"> <i class="pe-7s-note2"></i>
-							<p>Connect App</p>
-					</a></li>
-					<li><a href="avtar.html"> <i class="pe-7s-note2"></i>
-							<p>My Avatar</p>
-					</a></li>
 					<li><a href="target.html"> <i class="pe-7s-note2"></i>
 							<p>My Target</p>
 					</a></li>
-					<li><a href="FamilyOverview.html"> <i class="pe-7s-note2"></i>
+					<li><a href="connectapp.html"> <i class="pe-7s-note2"></i>
+							<p>Connect App</p>
+					</a></li>
+					<li><a href="avtar.html"> <i class="pe-7s-user"></i>
+							<p>My Avatar</p>
+					</a></li>
+					<li><a href="FamilyOverview.html"> <i class="pe-7s-user"></i>
 							<p>Family Overview</p>
 					</a></li>
 					<li><a href="Family.html"> <i class="pe-7s-note2"></i>
@@ -160,7 +166,6 @@ form {
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Dashboard</a>
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">
@@ -170,14 +175,15 @@ form {
 							</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"> <i class="fa fa-globe"></i> <b
-									class="caret hidden-lg hidden-md"></b> <span
-									class="notification hidden-sm hidden-xs">5</span>
+									class="caret hidden-lg hidden-md"></b> 
 									<p class="hidden-lg hidden-md">
 										5 Notifications <b class="caret"></b>
 									</p>
 							</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Notification 1</a></li>
+									<li><a href="" class="btn btn-default btn-rounded mb-4"
+					data-toggle="modal" data-target="#modalLoginForm">Launch Fruit
+					intake</a></li>
 									<li><a href="#">Notification 2</a></li>
 									<li><a href="#">Notification 3</a></li>
 									<li><a href="#">Notification 4</a></li>
@@ -205,18 +211,19 @@ form {
 						<div class="col-md-4">
 							<div class="card">
 								<div class="header">
-									<h4 class="title">Avatar</h4>
+									<h4 class="title">&nbsp;</h4>
 								</div>
 								<div class="box" style="text-align: center;">
 									<div>
-										<img src="Images/images.png" alt="Team Member 1"
+										
+										<img src="Images/Daughter.png" alt="Team Member 1"
 											onclick="window.open('avtar.html', '_self');">
 									</div>
-									<h3>Jackson</h3>
+									<h3>Jessy</h3>
 									<div>
 										<strong></strong>
 									</div>
-									<p class="description ">Be Smart</p>
+									<p class="description "></p>
 									<!-- <div>
 										<a href="#"><i class="fa fa-google-plus fa-1x social-icon"></i></a>
 										<a href="#"><i class="fa fa-twitter fa-1x social-icon"></i></a>
@@ -227,15 +234,15 @@ form {
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="card" style="background-color:lightgreen;">
+							<div class="card" style="background-color: lightgreen;">
 								<div class="header">
 									<h4 class="title">Day</h4>
-									<p class="category">Today activity</p>
+									<p class="category">Today Activities</p>
 								</div>
-								<div id="dayChart" class="content" >
+								<div id="dayChart" class="content">
 									<!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div> -->
 									<div id="dailyActivity"
-										onclick="window.open('daydelta.html', '_self');" ></div>
+										onclick="window.open('daydelta.html', '_self');"></div>
 									<!-- <div class="footer">
 										<div class="legend">
 											<i class="fa fa-circle text-info"></i> Open <i
@@ -252,10 +259,10 @@ form {
 						</div>
 
 						<div class="col-md-4">
-							<div class="card" style="background-color:orange;">
+							<div class="card" style="background-color: pink;">
 								<div class="header">
 									<h4 class="title">Week</h4>
-									<p class="category">This Week activities</p>
+									<p class="category">This Week Activities</p>
 								</div>
 								<div class="content">
 									<!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div> -->
@@ -281,12 +288,6 @@ form {
 
 				</div>
 			</div>
-
-
-			<!-- Small modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal"
-				data-target=".bd-example-modal-sm">Small modal</button>
-
 			<div class="modal fade bd-example-modal-sm" tabindex="-1"
 				role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-sm">
@@ -338,22 +339,6 @@ form {
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
 
-<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-    	});
-	</script>
 <script type="text/javascript"
 	src="http://mbostock.github.com/d3/d3.js?2.1.3"></script>
 
@@ -406,13 +391,15 @@ var svg = d3.select(activityType).append("svg")
         .style("fill", function (d) {
         return color(d.data.count);
     });
-
+   	
     g.append("text")
         .attr("transform", function (d) {
         return "translate(" + arc.centroid(d) + ")";
     })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
+        .style("font-size","10.5px")
+        .style("fill","white")
         .text(function (d) {
         return d.data.region;
     });
